@@ -236,9 +236,6 @@ async def main():
     async with aiohttp.ClientSession(headers=get_header()) as session:
         async with session.get(MAIN_URL) as response:
 
-            print("Status:", response.status)
-            print("Content-type:", response.headers['content-type'])
-
             html = await response.text()
             soup = BeautifulSoup(html, 'html.parser')
 
@@ -297,4 +294,6 @@ if __name__ == '__main__':
     if args.mode == "run":
         asyncio.run(main())
     else:
+        if not os.path.isdir(WORKDIR_NAME):
+            os.mkdir(WORKDIR_NAME)
         create_new_files_pair()

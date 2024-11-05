@@ -17,4 +17,6 @@ Create new dataset:
    ```bash
    main.py create_new
    ```
-When ```bash main.py run``` will work with the most recent created dataset.
+
+Choose ```bash main.py run``` if you want to begin or continue scrapping into the most recent created dataset, 
+            otherwise if you want to begin new scrapping choose ```bash main.py create_new``` to create new dataset.
